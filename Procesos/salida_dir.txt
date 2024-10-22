@@ -1,0 +1,15 @@
+ El volumen de la unidad C es Windows
+ El n£mero de serie del volumen es: BC40-6B8A
+
+ Directorio de C:\Users\Ismael\PycharmProjects\pythonProject\PES\Procesos
+
+27/09/2024  09:59    <DIR>          .
+26/09/2024  13:42    <DIR>          ..
+26/09/2024  14:17               234 abrirProcesos.py
+26/09/2024  13:55                 0 fork.py
+27/09/2024  09:53             3.562 menu.py
+27/09/2024  09:59                 0 salida_dir.txt
+27/09/2024  09:59             4.615 Subprocesos_Teor¡a.py
+26/09/2024  13:56                 0 texto.txt
+               6 archivos          8.411 bytes
+               2 dirs  382.474.981.376 bytes libres
