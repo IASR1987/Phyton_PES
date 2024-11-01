@@ -26,18 +26,43 @@ Imprime un mensaje cuando un cajero no puede realizar el retiro porque no hay su
 
 """
 import threading
+import time
+
+candado=threading.Lock()
 
 class CuentaBancaria():
-    def __init__(self, saldo):
-        self.saldo = saldo
+    def __init__(self,):
+        self.saldo = 1000
 
     def retirar(self, cantidad):
-        if self.saldo<self.saldo-cantidad:
-            print('saldo insuficiente')
-        else:
-            self.saldo -= cantidad
+        with candado:
+            if self.saldo<self.saldo-cantidad:
+                print('saldo insuficiente')
+            else:
+                self.saldo -= cantidad
+                print('saldo Actual '+str(self.saldo))
+                time.sleep(2)
 
+    def ingresar(self, cantidad):
+        with candado:
+            self.saldo += cantidad
+            print('saldo Actual ' + str(self.saldo))
+            time.sleep(2)
+hilos=[]
+cuenta= CuentaBancaria()
 
-c1 = CuentaBancaria(100)
-c2=CuentaBancaria(1)
+for i in range(10):
+    if i%2==0:
+        hilo=threading.Thread(target=cuenta.retirar, args=(100,))
+        hilos.append(hilo)
+    else:
+        hilo=threading.Thread(target=cuenta.ingresar, args=(200,))
+        hilos.append(hilo)
 
+for hilo in hilos:
+    hilo.start()
+
+for hilo in hilos:
+    hilo.join()
+
+print(cuenta.saldo)

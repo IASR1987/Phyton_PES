@@ -22,7 +22,7 @@ import time
 
 class Discoteca:
     def __init__(self):
-        self.semaforo = threading.Semaphore(value=4)
+        self.portero = threading.Semaphore(value=4)
 
 
 
@@ -33,11 +33,11 @@ class Persona:
     def entrarDiscoteca(self, discoteca):
         # Intentar entrar a la discoteca
         print(f"{self.nombre} está intentando entrar a la discoteca.")
-        discoteca.semaforo.acquire()  # Espera a que haya lugar disponible
+        discoteca.portero.acquire()  # Espera a que haya lugar disponible
         print(f"{self.nombre} ha entrado a la discoteca.")
         time.sleep(random.randint(5, 10))  # Simula que la persona está en la discoteca por un tiempo
         print(f"{self.nombre} ha salido de la discoteca.")
-        discoteca.semaforo.release()  # Libera el lugar
+        discoteca.portero.release()  # Libera el lugar
 
 
 discoteca = Discoteca()
