@@ -3,7 +3,7 @@ Imagina que estás gestionando una fábrica donde los productos son creados (pro
 por un trabajador (productor) y luego son empaquetados (consumidos) por otro trabajador (consumidor).
 Debes implementar dos hilos en Python:
 
-Productor: Este hilo generará (producirá) un número fijo de productos y los agregará a una cola compartida.
+FactoriaHambuerguesas: Este hilo generará (producirá) un número fijo de productos y los agregará a una cola compartida.
 Consumidor: Este hilo tomará productos de la cola compartida y los "consumirá".
 
 """
