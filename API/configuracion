@@ -1,0 +1,11 @@
+# 1. Verificar si Python está instalado
+#python --version || py --version
+
+# Si Python no está instalado, muestra un mensaje y finaliza
+
+# 2. Verificar si pip está instalado
+py -m ensurepip --default-pip
+
+# 3. Si pip no se reconoce, usar py -m pip para instalar FastAPI y Uvicorn
+py -m pip install fastapi uvicorn
+
